@@ -8,15 +8,17 @@
         label = "KSCAN";
 
         input-gpios = 
-            <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            // Encoder Button Pin
+            <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>
         ;
-
     };
 
     center_encoder: encoder_center {
 		compatible = "alps,ec11";
 		label = "CENTER_ENCODER";
+        // Encoder DT pin
 		a-gpios = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        // Encoder CLK pin
 		b-gpios = <&xiao_d  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		resolution = <4>;
 		status = "okay";

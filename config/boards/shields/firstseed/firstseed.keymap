@@ -13,7 +13,7 @@
 
         default_layer {
             bindings = <
-                &sys_reset
+                &kp C_MUTE
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
