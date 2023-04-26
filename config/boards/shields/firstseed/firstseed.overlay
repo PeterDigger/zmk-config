@@ -30,3 +30,6 @@
         sensors = <&center_encoder>;
 	};
 };
+
+&sercom0 { status = "disabled"; };
+&sercom4 { status = "disabled"; };
