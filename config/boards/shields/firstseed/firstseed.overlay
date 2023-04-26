@@ -12,4 +12,19 @@
         ;
 
     };
+
+    center_encoder: encoder_center {
+		compatible = "alps,ec11";
+		label = "CENTER_ENCODER";
+		a-gpios = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		b-gpios = <&xiao_d  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		resolution = <4>;
+		status = "okay";
+	};
+
+	sensors: sensors {
+		compatible = "zmk,keymap-sensors";
+		status = "okay";
+        sensors = <&center_encoder>;
+	};
 };

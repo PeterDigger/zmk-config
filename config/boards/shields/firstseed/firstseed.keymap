@@ -15,6 +15,7 @@
             bindings = <
                 &sys_reset
             >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
