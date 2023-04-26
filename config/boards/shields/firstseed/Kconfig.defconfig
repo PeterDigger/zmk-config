@@ -3,4 +3,7 @@ if SHIELD_FIRSTSEED
 config ZMK_KEYBOARD_NAME
     default "firstseed"
 
+config ZMK_USB
+    default y
+
 endif
