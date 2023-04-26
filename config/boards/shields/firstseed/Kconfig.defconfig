@@ -1,6 +1,6 @@
 if SHIELD_FIRSTSEED
 
 config ZMK_KEYBOARD_NAME
-    default "FirstSeed"
+    default "firstseed"
 
 endif
