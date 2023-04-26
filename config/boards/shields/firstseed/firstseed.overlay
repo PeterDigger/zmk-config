@@ -9,7 +9,7 @@
 
         input-gpios = 
             // Encoder Button Pin
-            <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>
+            <&porta 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>
         ;
     };
 
@@ -17,9 +17,9 @@
 		compatible = "alps,ec11";
 		label = "CENTER_ENCODER";
         // Encoder DT pin
-		a-gpios = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		a-gpios = <&porta 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         // Encoder CLK pin
-		b-gpios = <&xiao_d  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		b-gpios = <&porta  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		resolution = <4>;
 		status = "okay";
 	};
