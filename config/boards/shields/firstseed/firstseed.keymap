@@ -15,7 +15,7 @@
             bindings = <
                 &kp C_MUTE
             >;
-            sensor-bindings = <&center_encoder C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
