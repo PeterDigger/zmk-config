@@ -1,6 +1,6 @@
-if SHIELD_FIRSTSEED
+if SHIELD_APIS
 
 config ZMK_KEYBOARD_NAME
-    default "ball-peen"
+    default "apis"
 
 endif
