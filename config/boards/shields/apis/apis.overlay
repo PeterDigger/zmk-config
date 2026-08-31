@@ -22,11 +22,11 @@
 
         /* Cols (Output): Direct SAMD21 Ports for D6-D10 */
         col-gpios
-            = <&pb08 GPIO_ACTIVE_HIGH> /* D6 (PB08) */
-            , <&pb09 GPIO_ACTIVE_HIGH> /* D7 (PB09) */
-            , <&pa07 GPIO_ACTIVE_HIGH> /* D8 (PA07) */
-            , <&pa05 GPIO_ACTIVE_HIGH> /* D9 (PA05) */
-            , <&pa06 GPIO_ACTIVE_HIGH> /* D10 (PA06) */
+	    = <&xiao_d 6 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 10 GPIO_ACTIVE_HIGH>
             ;
     };
 };
