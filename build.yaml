@@ -13,5 +13,5 @@
 #
 ---
 include:
-  - board: seeeduino_xiao
+  - board: seeeduino_xiao//zmk
     shield: apis
