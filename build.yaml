@@ -14,4 +14,4 @@
 ---
 include:
   - board: seeeduino_xiao
-    shield: firstseed
+    shield: apis
