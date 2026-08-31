@@ -1,2 +1,2 @@
 config SHIELD_APIS
-    def_bool $(shields_list_contains, apis)
+    def_bool $(shields_list_contains,apis)
