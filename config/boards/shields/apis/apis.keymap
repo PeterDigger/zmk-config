@@ -1,72 +1,16 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
 / {
-    chosen {
-        zmk,kscan = &kscan0;
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp O     &kp P
+                &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K  &kp L     &kp RET
+                &kp Z  &kp X  &kp C  &kp V  &kp SPC  &kp B  &kp N  &kp M  &kp COMMA &kp DOT
+            >;
+        };
     };
-
-    kscan0: kscan_0 {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
-        diode-direction = "col2row";
-        //diode-direction = "row2col";
-        row-gpios =
-            <&xiao_d 0 GPIO_ACTIVE_HIGH>,
-            <&xiao_d 1 GPIO_ACTIVE_HIGH>,
-            <&xiao_d 2 GPIO_ACTIVE_HIGH>,
-            <&xiao_d 3 GPIO_ACTIVE_HIGH>,
-            <&xiao_d 4 GPIO_ACTIVE_HIGH>,
-            <&xiao_d 5 GPIO_ACTIVE_HIGH>;
-        col-gpios =
-            <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-
-        //compatible = "zmk,kscan-gpio-direct";
-	//input-gpios = 
-        //    // Encoder Button Pin
-        //    <&porta 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>
-        //;
-    };
-
-   // encoder: encoder {
-//	compatible = "alps,ec11";
-//	label = "CENTER_ENCODER";
-//        // Encoder DT pin
-//	a-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//        // Encoder CLK pin
-//	b-gpios = <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//	resolution = <4>;
-//	status = "okay";
-//	};
-//
-//	sensors: sensors {
-//		compatible = "zmk,keymap-sensors";
-//		status = "okay";
-//        	sensors = <&encoder>;
-//	};
 };
-
-
-//# Disable serial I/O so I can use the D7 (RX) pin
-&xiao_serial {
-    status = "disabled";
-};
-
-//# Configure the shifter as an SPI device
-//#&xiao_spi {
-//#    status = "okay";
-//#    cs-gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW)>;
-//#    shifter: 595@0 {
-//#        compatible = "zmk,gpio-595";
-//#        status = "okay";
-//#        gpio-controller;
-//#        spi-max-frequency = <200000>;
-//#        reg = <0>;
-//#        label = "74HC595";
-//#        ngpios = <8>;
-//#    };
-//#};
-
-&sercom0 { status = "disabled"; };
-&sercom4 { status = "disabled"; };
