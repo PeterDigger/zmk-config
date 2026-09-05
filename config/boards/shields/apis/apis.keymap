@@ -3,6 +3,14 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    /* Optional: Fine-tune cursor speed and acceleration */
+    &mmv {
+        time-to-max-speed-ms = <300>;
+        acceleration-exponent = <1>;
+    };
+
+    
+
     behaviors {
         hm: home_row_mod {
             compatible = "zmk,behavior-hold-tap";
@@ -130,7 +138,14 @@
             key-positions = <28 29>;
             bindings = <&kp DOT>;
             layers = <0>;
-        };   };
+        };
+        combo_mclk {
+            timeout-ms = <50>;
+            key-positions = <6 8>;
+            bindings = <&mkp MCLK>;
+            layers = <2>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -153,9 +168,16 @@
 
         right_layer {
             bindings = <
-                &kp F1        &kp F2        &kp F3        &kp F4        &none               &none             &none         &none         &none         &none
-                &hm LSHFT F5  &hm LALT F6   &hm LCTRL F7  &hm LGUI F8   &none               &none             &none         &none         &none         &none
-                &kp F9        &kp F10       &kp F11       &kp F12       &none               &trans            &none         &none         &none         &none
+                &kp F1        &kp F2        &kp F3        &kp F4        &none               &none             &mkp LCLK      &mmv MOVE_UP   &mkp RCLK          &none
+                &hm LSHFT F5  &hm LALT F6   &hm LCTRL F7  &hm LGUI F8   &none               &none             &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &mo 3
+                &kp F9        &kp F10       &kp F11       &kp F12       &none               &trans            &none          &none          &none              &none
+            >;
+        };
+        scroll_layer {
+            bindings = <
+                &trans        &trans        &trans        &trans        &trans              &trans            &trans         &msc SCRL_UP   &trans          &trans
+                &trans        &trans        &trans        &trans        &trans              &trans            &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &trans
+                &trans        &trans        &trans        &trans        &trans              &trans            &trans          &trans         &trans          &trans
             >;
         };
     };
