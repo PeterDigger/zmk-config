@@ -23,6 +23,10 @@
         wakeup-source;
         diode-direction = "row2col";
 
+		/* Adds a 10ms hardware stabilization window on cold boot */
+        debounce-press-ms = <10>;
+        debounce-release-ms = <10>;
+
         /* Rows (Output): Driven Active Low */
         row-gpios
             = <&xiao_d 0 GPIO_ACTIVE_LOW>
